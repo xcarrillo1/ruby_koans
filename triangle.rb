@@ -15,6 +15,9 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+  sorted_triangle_lengths = [a, b, c].sort
+  raise TriangleError if (sorted_triangle_lengths[0] + sorted_triangle_lengths[1] <= sorted_triangle_lengths[2])
+  raise TriangleError if (a <= 0 || b <= 0 || c <= 0)
   if a == b && b == c && a == c
     return :equilateral
   elsif (a == b) || (a == c) || (b == c)
